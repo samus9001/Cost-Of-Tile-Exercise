@@ -10,7 +10,7 @@
             Console.WriteLine("Enter the length of the area");
             decimal length = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Enter the cost of per square foot");
+            Console.WriteLine("Enter the cost of flooring per square foot");
             decimal cost = Convert.ToDecimal(Console.ReadLine());
 
             decimal areaSF = (length * width);
