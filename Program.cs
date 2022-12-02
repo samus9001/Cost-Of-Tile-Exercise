@@ -15,7 +15,7 @@
 
             decimal areaSF = (length * width);
             decimal totalCost = (areaSF * cost);
-            Console.WriteLine("The total cost to cover the area is £" + totalCost);
+            Console.WriteLine($"The total cost to cover the area is £{totalCost}");
         }
     }
 }
