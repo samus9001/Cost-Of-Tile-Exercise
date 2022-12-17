@@ -8,7 +8,7 @@ namespace CostOfTile
         {
             const decimal LABOUR_SF = 20;
             const decimal LABOUR_PH = 86;
-            decimal areaDecimal = 0;
+            decimal area = 0;
             decimal flooringCost = 0;
             decimal labourCost = 0;
             decimal totalCost = 0;
@@ -32,47 +32,44 @@ namespace CostOfTile
                 {
                     //user is prompted to enter a value for width and length
                     Console.WriteLine("\nEnter the width of the room flooring");
-                    double width = Convert.ToDouble(Console.ReadLine());
+                    decimal width = Convert.ToDecimal(Console.ReadLine());
                     Console.WriteLine("\nEnter the length of the room flooring");
-                    double length = Convert.ToDouble(Console.ReadLine());
+                    decimal length = Convert.ToDecimal(Console.ReadLine());
 
                     //formula to calculate the square foot area of a rectangle
-                    double area = (length * width);
-                    areaDecimal = Convert.ToDecimal(area);
+                    area = (length * width);
                 }
 
                 if (userInput == "c")
                 {
                     //user is prompted to enter a value for the radius of the circle
                     Console.WriteLine("\nEnter the radius of the room flooring");
-                    double radius = Convert.ToDouble(Console.ReadLine());
+                    decimal radius = Convert.ToDecimal(Console.ReadLine());
 
                     //calculate the radius squared
-                    double radiusSquared = radius * radius;
+                    decimal radiusSquared = radius * radius;
 
                     //formula to calculate the square foot area of a circle
-                    double area = (Math.PI * radiusSquared);
-                    areaDecimal = Convert.ToDecimal(area);
+                    area = (decimal)Math.PI * radiusSquared;
                 }
 
                 if (userInput == "t")
                 {
                     //user is prompted to enter a value for base length and height
                     Console.WriteLine("\nEnter the base length of the room flooring");
-                    double length = Convert.ToDouble(Console.ReadLine());
+                    decimal length = Convert.ToDecimal(Console.ReadLine());
                     Console.WriteLine("\nEnter the height of the room flooring");
-                    double height = Convert.ToDouble(Console.ReadLine());
+                    decimal height = Convert.ToDecimal(Console.ReadLine());
 
                     //formula to calculate the square foot area of a triangle
-                    double area = (0.5 * length * height);
-                    areaDecimal = Convert.ToDecimal(area);
+                    area = (0.5m * length * height);
                 }
 
                 //formula to calculate the cost of flooring
-                flooringCost = (areaDecimal * cost);
+                flooringCost = (area * cost);
 
                 //formula to calculate the total labourCost
-                labourCost = (areaDecimal / LABOUR_SF) * LABOUR_PH;
+                labourCost = (area / LABOUR_SF) * LABOUR_PH;
                 totalCost = flooringCost + labourCost;
 
                 //outputs the total cost to the user
