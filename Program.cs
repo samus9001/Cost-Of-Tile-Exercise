@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace CostOfTile
 {
@@ -13,13 +14,14 @@ namespace CostOfTile
             decimal labourCost = 0;
             decimal totalCost = 0;
             decimal totalCostRounded = 0;
+            char endExercise;
 
             while (true)
             {
                 Console.WriteLine("What is the shape of the room? Please input one of the following: r - rectangle, c - circle, t - triangle");
-                string userInput = Console.ReadLine();
+                char userInput = Console.ReadKey().KeyChar;
 
-                if (userInput != "r" && userInput != "c" && userInput != "t")
+                if (userInput != 'r' && userInput != 'c' && userInput != 't')
                 {
                     Console.WriteLine("\nThat is not a valid option\n");
                     continue;
@@ -28,7 +30,7 @@ namespace CostOfTile
                 Console.WriteLine("\nEnter the cost of flooring per square foot");
                 decimal cost = Convert.ToDecimal(Console.ReadLine());
 
-                if (userInput == "r")
+                if (userInput == 'r')
                 {
                     //user is prompted to enter a value for width and length
                     Console.WriteLine("\nEnter the width of the room flooring");
@@ -40,7 +42,7 @@ namespace CostOfTile
                     area = (length * width);
                 }
 
-                if (userInput == "c")
+                if (userInput == 'c')
                 {
                     //user is prompted to enter a value for the radius of the circle
                     Console.WriteLine("\nEnter the radius of the room flooring");
@@ -53,7 +55,7 @@ namespace CostOfTile
                     area = (decimal)Math.PI * radiusSquared;
                 }
 
-                if (userInput == "t")
+                if (userInput == 't')
                 {
                     //user is prompted to enter a value for base length and height
                     Console.WriteLine("\nEnter the base length of the room flooring");
@@ -74,8 +76,22 @@ namespace CostOfTile
 
                 //outputs the total cost to the user
                 totalCostRounded = Math.Round(totalCost, 2);
-                Console.WriteLine($"\nThe total cost to cover the flooring for the room is £{totalCostRounded}");
-                break;
+                Console.WriteLine($"\nThe total cost to cover the flooring for the room is £{totalCostRounded}\n");
+
+                //prompts user to restart or exit
+                Console.WriteLine("If you would like to start again press Y or press N to exit");
+                endExercise = Console.ReadKey().KeyChar;
+
+                if (endExercise == 'Y')
+                {
+                    Console.Clear();
+                    Main(args);
+                }
+
+                else if (endExercise == 'N')
+                {
+                    Environment.Exit(0);
+                }
             }
         }
     }
