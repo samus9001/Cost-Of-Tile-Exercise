@@ -20,6 +20,7 @@ namespace CostOfTile
             {
                 Console.WriteLine("What is the shape of the room? Please input one of the following: r - rectangle, c - circle, t - triangle");
                 char userInput = Console.ReadKey().KeyChar;
+                Console.WriteLine();
 
                 if (userInput != 'r' && userInput != 'c' && userInput != 't')
                 {
