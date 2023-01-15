@@ -91,7 +91,7 @@ namespace CostOfTile
 
                 else if (endExercise == 'N')
                 {
-                    Environment.Exit(0);
+                    return;
                 }
             }
         }
