@@ -17,4 +17,4 @@ This is a simple program that was made as an exercise to learn how integers, for
 
 ### Getting Started
 
-To use the program run the CostOfTile.exe file then follow the prompts. When entering a number press Enter key afterwards.
+To use the program download the bin.zip file from the Releases page, then run the CostOfTile.exe file then follow the prompts. When entering a number press Enter key afterwards.
